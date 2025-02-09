@@ -22,6 +22,7 @@ export function useWeather() {
         method: "GET",
         query: { city: city },
       });
+      console.log("🚀 ~ fetchWeather ~ data:", data);
 
       if (data.error) {
         error.value =

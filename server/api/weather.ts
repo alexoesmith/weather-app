@@ -23,9 +23,7 @@ export default defineEventHandler(async (event) => {
     const response = await fetch(url);
     const data: WeatherData = await response.json();
 
-    if (response.ok) {
-      return { statusCode: 200, ...data };
-    }
+    return { statusCode: 200, ...data };
   } catch (e) {
     console.error("🚀 ~ defineEventHandler ~ e:", e);
     throw createError({
