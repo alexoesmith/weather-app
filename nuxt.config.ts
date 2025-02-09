@@ -4,7 +4,16 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en",
+      },
       title: "Weather App",
+      meta: [
+        {
+          name: "description",
+          content: "Weather App powered by WeatherAPI.com",
+        },
+      ],
     },
   },
 
