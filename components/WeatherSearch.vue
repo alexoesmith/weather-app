@@ -1,8 +1,13 @@
+<script setup lang="ts">
+const search = defineModel<string>(ref(""));
+</script>
+
 <template>
   <div>
     <label for="search" class="sr-only">Enter city name</label>
     <div class="relative">
       <input
+        v-model="search"
         type="text"
         name="search"
         class="bg-white rounded-xl w-full px-6 py-5 outline-0 placeholder:text-gray-400 ring-1 ring-inset focus:ring-2 focus:ring-effect-300 ring-effect-200 peer transition-colors"
