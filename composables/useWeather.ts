@@ -16,6 +16,7 @@ export function useWeather() {
 
     loading.value = true;
     error.value = null;
+    weatherData.value = null;
 
     try {
       const data = await $fetch<WeatherData>("/api/weather", {
