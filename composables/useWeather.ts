@@ -48,7 +48,7 @@ export function useWeather() {
     }
   };
 
-  // Ability to create additional functions e.g. searchWeather
+  // Ability to create additional related functions e.g. searchWeather to handle duplicate city names
 
   return { weatherData, error, loading, fetchWeather };
 }

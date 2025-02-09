@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-center">
+  <footer class="text-center" role="contentinfo">
     <p class="text-gray-500 text-xs">
       Powered by
       <a

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const search = defineModel<string>(ref(""));
+const search = defineModel<string>({ default: "" });
 </script>
 
 <template>
@@ -10,6 +10,7 @@ const search = defineModel<string>(ref(""));
         v-model.trim="search"
         type="text"
         name="search"
+        id="search"
         class="bg-white rounded-xl w-full px-6 py-5 outline-0 placeholder:text-gray-400 ring-1 ring-inset focus:ring-2 focus:ring-effect-300 ring-effect-200 peer transition-colors"
         placeholder="Enter city name"
       />
@@ -17,6 +18,8 @@ const search = defineModel<string>(ref(""));
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
+        aria-label="Search"
+        aria-hidden="true"
         class="size-6 absolute right-6 top-1/2 transform -translate-y-1/2 text-effect-400 peer-focus-within:scale-120 transition-transform"
       >
         <path

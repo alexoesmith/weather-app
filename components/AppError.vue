@@ -1,12 +1,14 @@
 <template>
   <p
     class="inline-flex text-red-500 font-semibold items-center gap-x-2.5 mx-auto"
+    role="alert"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
       class="size-5"
+      aria-hidden="true"
     >
       <path
         fill-rule="evenodd"
