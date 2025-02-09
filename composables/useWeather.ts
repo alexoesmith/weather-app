@@ -7,23 +7,21 @@ export function useWeather() {
   const loading = ref<boolean>(false);
 
   const fetchWeather = async (city: string) => {
-    if (!city) {
-      error.value = "Please enter a city name";
-      return;
-    }
-
-    if (city === weatherData.value?.location.name) return;
-
     loading.value = true;
     error.value = null;
     weatherData.value = null;
+
+    if (!city) {
+      error.value = "Please enter a city name";
+      loading.value = false;
+      return;
+    }
 
     try {
       const data = await $fetch<WeatherData>("/api/weather", {
         method: "GET",
         query: { city: city },
       });
-      console.log("🚀 ~ fetchWeather ~ data:", data);
 
       if (data.error) {
         error.value =
@@ -37,9 +35,7 @@ export function useWeather() {
       console.error("🚀 ~ fetchWeather ~ e:", e);
       if (e instanceof Error) {
         error.value =
-          (e as NuxtError).statusMessage ||
-          e.message ||
-          "An unexpected error occurred.";
+          (e as NuxtError).statusMessage || "An unexpected error occurred.";
       } else {
         error.value = "An unknown error occurred. Please try again later.";
       }
