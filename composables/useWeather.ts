@@ -32,6 +32,7 @@ export function useWeather() {
 
       weatherData.value = data;
     } catch (e) {
+      console.error("🚀 ~ fetchWeather ~ e:", e);
       if (e instanceof Error) {
         error.value =
           (e as NuxtError).statusMessage ||

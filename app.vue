@@ -14,7 +14,7 @@ const { weatherData, error, loading, fetchWeather } = useWeather();
     </AppError>
     <LoadingSpinner v-if="loading" />
     <WeatherDisplay v-if="weatherData" />
-    <AppButton :disabled="loading">
+    <AppButton :disabled="loading" @click="fetchWeather(city)">
       {{ loading ? "Loading..." : "Search Weather" }}
     </AppButton>
     <AppFooter />
