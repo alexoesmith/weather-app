@@ -1,4 +1,4 @@
-import type { WeatherData } from "~/types/weather";
+import { WeatherData } from "~/types/weather";
 
 export default defineEventHandler(async (event) => {
   const { city } = getQuery<{ city: string }>(event);
@@ -20,9 +20,10 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const response = await fetch(url);
-    const data: WeatherData = await response.json();
-
+    const data: WeatherData = await $fetch(url, {
+      method: "GET",
+      ignoreResponseError: true,
+    });
     return { statusCode: 200, ...data };
   } catch (e) {
     console.error("🚀 ~ defineEventHandler ~ e:", e);

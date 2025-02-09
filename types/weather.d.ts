@@ -1,4 +1,5 @@
 export interface WeatherData {
+  statusCode?: number;
   error?: {
     code: number;
     message: string;
