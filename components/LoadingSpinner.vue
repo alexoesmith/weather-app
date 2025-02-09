@@ -1,0 +1,5 @@
+<template>
+  <div
+    class="size-8 border-4 border-effect-100 border-b-effect-300 inline-block animate-spin rounded-full mx-auto"
+  />
+</template>
