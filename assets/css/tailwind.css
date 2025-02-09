@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-effect-50: #f0f9f0;
+  --color-effect-100: #ddefdc;
+  --color-effect-200: #bbdfbb;
+  --color-effect-300: #84c389;
+  --color-effect-400: #5daa66;
+  --color-effect-500: #3c8d48;
+  --color-effect-600: #2b7037;
+  --color-effect-700: #225a2d;
+  --color-effect-800: #1d4825;
+  --color-effect-900: #193b20;
+  --color-effect-950: #0d2112;
+}
